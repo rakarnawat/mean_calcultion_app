@@ -940,13 +940,35 @@ printData() async {
 
 
                             ];
-
                             final jsonUsers = users.map((user) => user.toJson()).toList();
                             await expenseManagerSheetApi.insert(jsonUsers);
-
                             ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text("Data Updated Successfully")));
-                          },
+                            quantityController1.clear();
+                            quantityController2.clear();
+                            quantityController3.clear();
+                            quantityController4.clear();
+                            quantityController5.clear();
+                            quantityController6.clear();
+                            quantityController7.clear();
+                            quantityController8.clear();
+                            quantityController9.clear();
+                            quantityController10.clear();
+                            quantityController11.clear();
+                            quantityController12.clear();
+                            rateController1.clear();
+                            rateController2.clear();
+                            rateController3.clear();
+                            rateController4.clear();
+                            rateController5.clear();
+                            rateController6.clear();
+                            rateController7.clear();
+                            rateController8.clear();
+                            rateController9.clear();
+                            rateController10.clear();
+                            rateController11.clear();
+                            rateController12.clear();
+                            },
                         ),
                         Padding(padding: EdgeInsets.all(5)),
                             InkWell(
