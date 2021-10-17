@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:mean_calcultion/Reports.dart';
@@ -98,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool rbvalue = false;
   int _value=1;
   var name = 'NA';
+
 
 printData() async {
     //Future insertUsers() async{
@@ -227,38 +229,47 @@ printData() async {
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            const Padding(padding: EdgeInsets.all(5)),
-                            const Text("1.", style: TextStyle(
-                                fontSize: 18,
-                            //    fontWeight: FontWeight.bold
-                            ),),
-                            const Padding(padding: EdgeInsets.all(5)),
-                            Flexible(child:
-                            TextField(
-                              controller: quantityController1,
-                              keyboardType: TextInputType.number,
-                              decoration: const InputDecoration(
-                                hintText: "Enter Quantity",
-                                labelText: "Quantity",
-                                border: OutlineInputBorder(),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              const Padding(padding: EdgeInsets.all(5)),
+                              const Text("1.", style: TextStyle(
+                                  fontSize: 18,
+                              //    fontWeight: FontWeight.bold
+                              ),),
+                              const Padding(padding: EdgeInsets.all(5)),
+                              Flexible(child:
+                              TextFormField(
+                                controller: quantityController1,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: <TextInputFormatter>[
+                                  WhitelistingTextInputFormatter.digitsOnly
+                                ],
+                                decoration: const InputDecoration(
+                                  hintText: "Enter Quantity",
+                                  labelText: "Quantity",
+                                  border: OutlineInputBorder(),
+                                ),
                               ),
-                            ),),
-                            const Padding(padding: EdgeInsets.all(5),),
-                            Flexible(child: TextField(
-                              controller: rateController1,
-                              keyboardType: TextInputType.number,
-                              decoration: const InputDecoration(
-                                hintText: "Enter Rate",
-                                labelText: "Rate",
-                                border: OutlineInputBorder(),
+
                               ),
-                            ),),
-                            const Padding(padding: EdgeInsets.all(10),)
-                          ],
-                        ),
+                              const Padding(padding: EdgeInsets.all(5),),
+                              Flexible(child: TextFormField(
+                                controller: rateController1,
+                                keyboardType: TextInputType.number,
+                                inputFormatters: <TextInputFormatter>[
+                                  WhitelistingTextInputFormatter.digitsOnly
+                                ],
+                                decoration: const InputDecoration(
+                                  hintText: "Enter Rate",
+                                  labelText: "Rate",
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),),
+                              const Padding(padding: EdgeInsets.all(10),)
+                            ],
+                          ),
+
 
                       const Padding(padding: EdgeInsets.all(5)),
                       Row(
@@ -272,9 +283,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController2,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -282,9 +296,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController2,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -306,9 +323,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController3,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -316,9 +336,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController3,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -340,9 +363,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController4,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -350,9 +376,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController4,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -374,9 +403,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController5,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -384,9 +416,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController5,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -408,9 +443,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController6,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -418,9 +456,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController6,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -442,9 +483,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController7,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -452,9 +496,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController7,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -476,9 +523,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController8,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -486,9 +536,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController8,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -510,9 +563,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController9,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -520,9 +576,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController9,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -544,9 +603,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController10,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -554,9 +616,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController10,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -578,9 +643,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController11,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -588,9 +656,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController11,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -612,9 +683,12 @@ printData() async {
                           ),),
                           const Padding(padding: EdgeInsets.all(5)),
                           Flexible(child:
-                          TextField(
+                          TextFormField(
                             controller: quantityController12,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Quantity",
                               labelText: "Quantity",
@@ -622,9 +696,12 @@ printData() async {
                             ),
                           ),),
                           const Padding(padding: EdgeInsets.all(5),),
-                          Flexible(child: TextField(
+                          Flexible(child: TextFormField(
                             controller: rateController12,
                             keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             decoration: const InputDecoration(
                               hintText: "Enter Rate",
                               labelText: "Rate",
@@ -699,6 +776,7 @@ printData() async {
                             //print(quantityController1.text);
                             //print(int.parse(quantityController1.text));
                             //print("-----------");
+
                             if(quantityController1.text == ''){
                               //print("crt qvalue1");
                               value1 =0;
@@ -937,13 +1015,9 @@ printData() async {
                                   rate: int.parse(rvalue12.toString()),
                                   date: now1,
                                   price: int.parse(value12.toString())*int.parse(rvalue12.toString())),
-
-
                             ];
                             final jsonUsers = users.map((user) => user.toJson()).toList();
                             await expenseManagerSheetApi.insert(jsonUsers);
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text("Data Updated Successfully")));
                             quantityController1.clear();
                             quantityController2.clear();
                             quantityController3.clear();
@@ -968,6 +1042,9 @@ printData() async {
                             rateController10.clear();
                             rateController11.clear();
                             rateController12.clear();
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Data Updated Successfully")));
+
                             },
                         ),
                         Padding(padding: EdgeInsets.all(5)),
@@ -1015,6 +1092,7 @@ printData() async {
         ),
     );
   }
+
 }
 
 
